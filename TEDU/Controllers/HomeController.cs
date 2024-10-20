@@ -26,5 +26,13 @@ namespace TEDU.Controllers
 
             return View();
         }
+
+        public ActionResult Schedule()
+        {
+            ViewBag.Message = "This is Schedule page";
+
+            return View();
+        }
+
     }
 }

@@ -1828,6 +1828,7 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\bootstrap.rtl.css" />
     <Content Include="Content\css\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\img\about.jpg" />
     <Content Include="Content\img\call-to-action.jpg" />
     <Content Include="Content\img\carousel-1.jpg" />
@@ -1859,7 +1860,6 @@
     <Content Include="Content\img\testimonial-4.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\css\Site.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -2086,6 +2086,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\lib\owlcarousel\LICENSE" />
     <Content Include="Scripts\lib\waypoints\links.php" />
+    <Content Include="Views\Home\Schedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
