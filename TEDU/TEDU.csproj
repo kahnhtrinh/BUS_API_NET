@@ -2052,6 +2052,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\main.js" />
+    <Content Include="Scripts\js\vi.js" />
     <Content Include="Scripts\lib\animate\animate.css" />
     <Content Include="Scripts\lib\animate\animate.min.css" />
     <Content Include="Scripts\lib\easing\easing.js" />
