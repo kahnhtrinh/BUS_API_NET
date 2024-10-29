@@ -26,5 +26,28 @@ namespace TEDU.Controllers
 
             return View();
         }
+
+        public ActionResult News()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Schedule() 
+        {
+            ViewBag.Message = string.Empty;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Search(string departure, string destination, DateTime date)
+        {
+            ViewBag.Departure = departure;
+            ViewBag.Destination = destination;
+            ViewBag.Date = date;
+
+            return View("SearchResults");
+        }
     }
 }
