@@ -393,3 +393,7 @@ D:\Năm 3\Dot.Net\BUS_.NET_MVC\TEDU\obj\Debug\TEDU.csproj.CoreCompileInputs.cach
 D:\Năm 3\Dot.Net\BUS_.NET_MVC\TEDU\obj\Debug\TEDU.csproj.Up2Date
 D:\Năm 3\Dot.Net\BUS_.NET_MVC\TEDU\obj\Debug\TEDU.dll
 D:\Năm 3\Dot.Net\BUS_.NET_MVC\TEDU\obj\Debug\TEDU.pdb
+D:\Năm 3\Dot.Net\BUS_.NET_MVC\TEDU\bin\BouncyCastle.Cryptography.dll
+D:\Năm 3\Dot.Net\BUS_.NET_MVC\TEDU\bin\itextsharp.dll
+D:\Năm 3\Dot.Net\BUS_.NET_MVC\TEDU\bin\BouncyCastle.Cryptography.xml
+D:\Năm 3\Dot.Net\BUS_.NET_MVC\TEDU\bin\itextsharp.xml

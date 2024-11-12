@@ -40,6 +40,12 @@ namespace TEDU.Controllers
             return View();
         }
 
+        public ActionResult Lookup()
+        {
+            ViewBag.Message = string.Empty;
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Search(string departure, string destination, DateTime date)
         {

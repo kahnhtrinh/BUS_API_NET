@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -121,7 +127,43 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CoDriverController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DriverController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PersonalProfileController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RouteController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StatisticController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TicketController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TicketStaffController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TripController.cs" />
+    <Compile Include="Areas\Admin\Models\CoDriver.cs" />
+    <Compile Include="Areas\Admin\Models\Contact.cs" />
+    <Compile Include="Areas\Admin\Models\Driver.cs" />
+    <Compile Include="Areas\Admin\Models\Employee.cs" />
+    <Compile Include="Areas\Admin\Models\News.cs" />
+    <Compile Include="Areas\Admin\Models\RouteInfo.cs" />
+    <Compile Include="Areas\Admin\Models\Ticket.cs" />
+    <Compile Include="Areas\Admin\Models\TicketStaff.cs" />
+    <Compile Include="Areas\Admin\Models\Trip.cs" />
+    <Compile Include="Areas\Staff\Controllers\ContactController.cs" />
+    <Compile Include="Areas\Staff\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Staff\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Staff\Controllers\PersonalProfileController.cs" />
+    <Compile Include="Areas\Staff\Controllers\RouteController.cs" />
+    <Compile Include="Areas\Staff\Controllers\TicketController.cs" />
+    <Compile Include="Areas\Staff\Controllers\TripController.cs" />
+    <Compile Include="Areas\Staff\Models\CoDriver.cs" />
+    <Compile Include="Areas\Staff\Models\Contact.cs" />
+    <Compile Include="Areas\Staff\Models\Driver.cs" />
+    <Compile Include="Areas\Staff\Models\Employee.cs" />
+    <Compile Include="Areas\Staff\Models\News.cs" />
+    <Compile Include="Areas\Staff\Models\RouteInfo.cs" />
+    <Compile Include="Areas\Staff\Models\Ticket.cs" />
+    <Compile Include="Areas\Staff\Models\TicketStaff.cs" />
+    <Compile Include="Areas\Staff\Models\Trip.cs" />
+    <Compile Include="Areas\Staff\StaffAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2006,6 +2048,7 @@
     <Content Include="Content\css\bootstrap.rtl.css" />
     <Content Include="Content\css\bootstrap.rtl.min.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\style_schedule.css" />
     <Content Include="Content\img\about.jpg" />
     <Content Include="Content\img\call-to-action.jpg" />
     <Content Include="Content\img\carousel-1.jpg" />
@@ -2044,10 +2087,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Assets\Admin\scss\navs\_global.scss" />
     <Content Include="Assets\Admin\scss\navs\_sidebar.scss" />
     <Content Include="Assets\Admin\scss\navs\_topbar.scss" />
@@ -2222,6 +2261,69 @@
     <Content Include="Assets\Admin\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Content\assets\css\main.map" />
     <Content Include="Content\assets\css\style.map" />
+    <Content Include="Areas\Admin\Views\CoDriver\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CoDriver\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\CoDriver\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\CoDriver\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Reply.cshtml" />
+    <Content Include="Areas\Admin\Views\Driver\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Driver\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Driver\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Driver\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PersonalProfile\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Route\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Route\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Route\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Route\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\News.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Table.cshtml" />
+    <Content Include="Areas\Admin\Views\Statistic\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Statistic\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Statistic\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Statistic\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TicketStaff\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\TicketStaff\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\TicketStaff\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\TicketStaff\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Ticket\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Trip\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Trip\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Trip\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Trip\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Staff\Views\Contact\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\Contact\Reply.cshtml" />
+    <Content Include="Areas\Staff\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\News\Create.cshtml" />
+    <Content Include="Areas\Staff\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Staff\Views\News\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\PersonalProfile\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\Route\Create.cshtml" />
+    <Content Include="Areas\Staff\Views\Route\Edit.cshtml" />
+    <Content Include="Areas\Staff\Views\Route\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\Shared\News.cshtml" />
+    <Content Include="Areas\Staff\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Staff\Views\Shared\_Table.cshtml" />
+    <Content Include="Areas\Staff\Views\Ticket\Create.cshtml" />
+    <Content Include="Areas\Staff\Views\Ticket\Edit.cshtml" />
+    <Content Include="Areas\Staff\Views\Ticket\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\Trip\Create.cshtml" />
+    <Content Include="Areas\Staff\Views\Trip\Edit.cshtml" />
+    <Content Include="Areas\Staff\Views\Trip\Index.cshtml" />
+    <Content Include="Areas\Staff\Views\web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2275,7 +2377,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\bootstrap.rtl.min.css.map" />

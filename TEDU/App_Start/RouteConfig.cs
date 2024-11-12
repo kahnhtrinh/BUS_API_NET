@@ -21,35 +21,35 @@ namespace TEDU
 
             routes.MapRoute(
                 name: "About",
-                url: "Ve-chung-toi/{id}",
+                url: "ve-chung-toi/{id}",
                 defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional },
                 namespaces: new[] { "TEDU.Controllers" }
             );
 
             routes.MapRoute(
                 name: "Contact",
-                url: "Lien-he/{id}",
+                url: "lien-he/{id}",
                 defaults: new { controller = "Home", action = "Contact", id = UrlParameter.Optional },
                 namespaces: new[] { "TEDU.Controllers" }
             );
 
             routes.MapRoute(
                 name: "Schedule",
-                url: "Lich-trinh/{id}",
+                url: "lich-trinh/{id}",
                 defaults: new { controller = "Home", action = "Schedule", id = UrlParameter.Optional },
                 namespaces: new[] { "TEDU.Controllers" }
             );
 
             routes.MapRoute(
                 name: "News",
-                url: "Tin-tuc/{id}",
+                url: "tin-tuc/{id}",
                 defaults: new { controller = "Home", action = "News", id = UrlParameter.Optional },
                 namespaces: new[] { "TEDU.Controllers" }
             );
 
             routes.MapRoute(
                 name: "Lookup",
-                url: "Tra-cuu-ve/{id}",
+                url: "tra-cuu-ve/{id}",
                 defaults: new { controller = "Home", action = "Lookup", id = UrlParameter.Optional },
                 namespaces: new[] { "TEDU.Controllers" }
             );
